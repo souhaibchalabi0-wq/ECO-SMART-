@@ -50,7 +50,7 @@
       color: var(--text-primary);
       min-height: 100vh;
       padding-top: env(safe-area-inset-top);
-      padding-bottom: calc(80px + env(safe-area-inset-bottom));
+      padding-bottom: calc(84px + env(safe-area-inset-bottom));
       transition: background-color var(--transition), color var(--transition);
     }
 
@@ -90,7 +90,6 @@
     .brand-mini-title {
       font-size: 16px;
       font-weight: 800;
-      letter-spacing: 0.4px;
     }
 
     .brand-mini-sub {
@@ -104,8 +103,11 @@
       gap: 8px;
     }
 
-    select, button {
+    select, button, textarea {
       font-family: inherit;
+    }
+
+    button {
       cursor: pointer;
     }
 
@@ -135,19 +137,19 @@
     }
 
     .container {
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 18px 16px;
+      padding: 16px;
     }
 
     .hero-card {
       background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
       color: #ffffff;
       border-radius: var(--radius-lg);
-      padding: 22px;
+      padding: 18px 20px;
       box-shadow: var(--shadow);
       border: 1px solid rgba(197, 155, 39, 0.45);
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     .hero-tag {
@@ -159,20 +161,19 @@
       border-radius: 999px;
       font-size: 11px;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .hero-title {
-      font-size: 26px;
+      font-size: 24px;
       font-weight: 900;
-      margin-bottom: 4px;
     }
 
     .hero-slogan {
       color: #f2d98d;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin: 4px 0 8px;
     }
 
     .hero-uni {
@@ -185,20 +186,20 @@
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
-      padding: 18px;
+      padding: 16px;
       box-shadow: var(--shadow);
-      margin-bottom: 16px;
-      transition: background-color var(--transition), border-color var(--transition);
+      margin-bottom: 14px;
     }
 
     .section-title {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 800;
       color: var(--green-dark);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 8px;
     }
 
     [data-theme="dark"] .section-title {
@@ -208,8 +209,8 @@
     .role-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-bottom: 16px;
+      gap: 8px;
+      margin-bottom: 14px;
     }
 
     .role-btn {
@@ -217,11 +218,9 @@
       color: var(--text-primary);
       border: 1.5px solid var(--border-color);
       border-radius: var(--radius-md);
-      padding: 12px 8px;
+      padding: 10px 8px;
       font-size: 13px;
       font-weight: 700;
-      text-align: center;
-      transition: all var(--transition);
     }
 
     .role-btn.active {
@@ -230,77 +229,71 @@
       border-color: var(--gold-soft);
     }
 
-    .auth-tabs {
+    .auth-tabs, .sub-tabs {
       display: flex;
-      gap: 8px;
-      margin-bottom: 14px;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 10px;
+      gap: 6px;
+      margin-bottom: 12px;
       flex-wrap: wrap;
     }
 
-    .tab-btn {
-      background: transparent;
+    .tab-btn, .sub-tab {
+      background: var(--bg-subtle);
       color: var(--text-secondary);
-      border: none;
-      padding: 6px 12px;
+      border: 1px solid var(--border-color);
+      padding: 6px 10px;
       border-radius: 8px;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
     }
 
-    .tab-btn.active {
+    .tab-btn.active, .sub-tab.active {
       background: var(--gold-light);
       color: var(--green-dark);
-      border: 1px solid var(--gold-soft);
+      border-color: var(--gold-soft);
     }
 
-    [data-theme="dark"] .tab-btn.active {
+    [data-theme="dark"] .tab-btn.active,
+    [data-theme="dark"] .sub-tab.active {
       color: var(--gold-soft);
     }
 
     .form-group {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     label {
       display: block;
       font-size: 12px;
       font-weight: 700;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
       color: var(--text-secondary);
     }
 
-    input {
+    input, select.field-input, textarea {
       width: 100%;
-      padding: 11px 12px;
+      padding: 10px 12px;
       border-radius: var(--radius-md);
       border: 1px solid var(--border-color);
       background: var(--bg-primary);
       color: var(--text-primary);
-      font-size: 14px;
-    }
-
-    input:focus {
-      outline: none;
-      border-color: var(--green-mid);
+      font-size: 13px;
     }
 
     .primary-btn {
       width: 100%;
-      padding: 12px;
+      padding: 11px;
       border-radius: var(--radius-md);
       border: none;
       background: var(--green-dark);
       color: #ffffff;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 800;
       border-bottom: 2px solid var(--gold-soft);
     }
 
-    .secondary-btn {
-      padding: 9px 14px;
-      border-radius: var(--radius-md);
+    .small-btn {
+      padding: 7px 11px;
+      border-radius: 9px;
       border: 1px solid var(--border-color);
       background: var(--bg-subtle);
       color: var(--text-primary);
@@ -308,13 +301,20 @@
       font-weight: 700;
     }
 
+    .small-btn.accent {
+      background: var(--green-dark);
+      color: #ffffff;
+      border-color: var(--gold-soft);
+    }
+
     .alert {
       padding: 10px 12px;
       border-radius: var(--radius-md);
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 12px;
+      font-weight: 700;
       margin-top: 10px;
       display: none;
+      line-height: 1.5;
     }
 
     .alert.show {
@@ -333,12 +333,11 @@
       border: 1px solid rgba(180, 35, 24, 0.35);
     }
 
-    .portal-header {
+    .portal-top {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: flex-start;
       gap: 10px;
-      margin-bottom: 14px;
       flex-wrap: wrap;
     }
 
@@ -346,9 +345,9 @@
       background: var(--gold-light);
       color: var(--green-dark);
       border: 1px solid var(--gold-soft);
-      padding: 4px 10px;
+      padding: 3px 10px;
       border-radius: 999px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
     }
 
@@ -356,29 +355,80 @@
       color: var(--gold-soft);
     }
 
-    .modules-grid {
+    .subjects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
-      margin-top: 12px;
     }
 
-    .module-item {
+    .subject-card {
       background: var(--bg-subtle);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       padding: 12px;
-      font-size: 12px;
-      font-weight: 700;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+      text-align: start;
+      color: var(--text-primary);
     }
 
-    .module-phase {
-      font-size: 10px;
+    .subject-card.selected {
+      border-color: var(--gold-soft);
+      background: var(--gold-light);
+      color: var(--green-dark);
+    }
+
+    [data-theme="dark"] .subject-card.selected {
       color: var(--gold-soft);
+    }
+
+    .subject-title {
+      font-size: 13px;
       font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .subject-meta {
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+
+    .box-item {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .box-item-title {
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .quiz-option {
+      display: block;
+      width: 100%;
+      text-align: start;
+      padding: 9px 11px;
+      margin-top: 6px;
+      border-radius: 9px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .quiz-option.correct {
+      border-color: var(--success);
+      background: rgba(6, 118, 71, 0.14);
+    }
+
+    .quiz-option.wrong {
+      border-color: var(--danger);
+      background: rgba(180, 35, 24, 0.14);
     }
 
     .bottom-nav {
@@ -388,7 +438,7 @@
       right: 0;
       background: var(--bg-card);
       border-top: 1px solid var(--border-color);
-      padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+      padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
       display: flex;
       justify-content: space-around;
       z-index: 30;
@@ -400,7 +450,7 @@
       color: var(--text-secondary);
       font-size: 12px;
       font-weight: 700;
-      padding: 6px 12px;
+      padding: 6px 10px;
       border-radius: 10px;
     }
 
@@ -424,7 +474,7 @@
       <div class="brand-badge">ES</div>
       <div>
         <div class="brand-mini-title">ECO SMART</div>
-        <div class="brand-mini-sub" id="t-slogan-top">Smart Learning – Smart University – Smart Future</div>
+        <div class="brand-mini-sub">Smart Learning – Smart University – Smart Future</div>
       </div>
     </div>
     <div class="controls">
@@ -439,16 +489,15 @@
 
   <main class="container">
     <section class="hero-card">
-      <span class="hero-tag" id="t-uni-tag">جامعة 20 أوت 1955 سكيكدة — الجزائر</span>
+      <span class="hero-tag" id="t-uni-tag">جامعة 20 أوت 1955 سكيكدة — السنة 1 اقتصاد وتجارة</span>
       <h1 class="hero-title">ECO SMART</h1>
       <p class="hero-slogan">Smart Learning – Smart University – Smart Future</p>
       <p class="hero-uni" id="t-hero-desc">
-        منصة جامعية ذكية لطلبة السنة الأولى في ميدان العلوم الاقتصادية والتسيير والعلوم التجارية، والأساتذة والإدارة.
+        منصة جامعية متكاملة للطلبة والأساتذة والإدارة في ميدان العلوم الاقتصادية والتسيير والعلوم التجارية.
       </p>
     </section>
 
-    <!-- Auth Section -->
-    <section id="authSection" class="card">
+    <section id="authCard" class="card">
       <div class="section-title">
         <span id="t-select-portal">اختر البوابة</span>
       </div>
@@ -465,11 +514,10 @@
         <button type="button" class="tab-btn" data-tab="reset" id="tabReset">استعادة كلمة المرور</button>
       </div>
 
-      <!-- Login Form -->
       <form id="loginForm">
         <div class="form-group">
-          <label for="loginEmail" id="lblLoginEmail">البريد الإلكتروني الجامعي</label>
-          <input type="email" id="loginEmail" required placeholder="name@univ-skikda.dz" />
+          <label for="loginEmail" id="lblLoginEmail">البريد الإلكتروني</label>
+          <input type="email" id="loginEmail" required placeholder="student@univ-skikda.dz" />
         </div>
         <div class="form-group">
           <label for="loginPass" id="lblLoginPass">كلمة المرور</label>
@@ -478,7 +526,6 @@
         <button type="submit" class="primary-btn" id="btnSubmitLogin">دخول</button>
       </form>
 
-      <!-- Register Form -->
       <form id="registerForm" class="hidden">
         <div class="form-group">
           <label for="regName" id="lblRegName">الاسم الكامل</label>
@@ -492,174 +539,135 @@
           <label for="regPass" id="lblRegPass">كلمة المرور (6 أحرف على الأقل)</label>
           <input type="password" id="regPass" minlength="6" required placeholder="••••••••" />
         </div>
-        <button type="submit" class="primary-btn" id="btnSubmitRegister">إنشاء حساب والتحقق من البريد</button>
+        <button type="submit" class="primary-btn" id="btnSubmitRegister">إنشاء حساب</button>
       </form>
 
-      <!-- Reset Password Form -->
       <form id="resetForm" class="hidden">
         <div class="form-group">
           <label for="resetEmail" id="lblResetEmail">البريد الإلكتروني المسجل</label>
           <input type="email" id="resetEmail" required placeholder="name@univ-skikda.dz" />
         </div>
-        <button type="submit" class="primary-btn" id="btnSubmitReset">إرسال رابط الاستعادة</button>
+        <button type="submit" class="primary-btn" id="btnSubmitReset">إرسال طلب الاستعادة</button>
       </form>
 
       <div id="authAlert" class="alert" role="alert"></div>
     </section>
 
-    <!-- Active Portal Section -->
-    <section id="portalSection" class="card hidden">
-      <div class="portal-header">
-        <div>
-          <span class="role-pill" id="activeRoleBadge">الطالب</span>
-          <h2 style="margin-top: 8px; font-size: 18px;" id="activeUserName">مرحباً</h2>
-          <p style="font-size: 12px; color: var(--text-secondary);" id="activeUserEmail"></p>
+    <section id="studentPortal" class="hidden">
+      <div class="card">
+        <div class="portal-top">
+          <div>
+            <span class="role-pill">🎓 بوابة الطالب — السنة 1</span>
+            <h2 style="margin-top: 6px; font-size: 17px;" id="stUserName"></h2>
+            <p style="font-size: 12px; color: var(--text-secondary);" id="stUserEmail"></p>
+          </div>
+          <button type="button" class="small-btn btn-logout">تسجيل الخروج</button>
         </div>
-        <button type="button" class="secondary-btn" id="btnLogout">تسجيل الخروج</button>
+
+        <div class="sub-tabs" style="margin-top: 12px;">
+          <button type="button" class="sub-tab active" data-st-tab="courses">📚 المقررات (6)</button>
+          <button type="button" class="sub-tab" data-st-tab="services">🗂️ الجدول والنتائج والخدمات</button>
+          <button type="button" class="sub-tab" data-st-tab="status">🔌 الحالة والربط</button>
+        </div>
       </div>
 
-      <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;" id="portalNotice">
-        تم تفعيل الجلسة المحلية المؤقتة للمرحلة الأولى. سيتم ربط الصلاحيات وقاعدة البيانات السحابية في المرحلة الثانية.
-      </p>
+      <div id="stTabCourses" class="card">
+        <div class="section-title">
+          <span>مقررات السنة الأولى (علوم اقتصادية وتجارية)</span>
+        </div>
+        <div class="subjects-grid" id="subjectsGrid"></div>
 
-      <div class="modules-grid" id="portalModules"></div>
+        <hr style="border: none; border-top: 1px solid var(--border-color); margin: 14px 0;" />
+
+        <div id="subjectDetailBox"></div>
+      </div>
+
+      <div id="stTabServices" class="card hidden">
+        <div class="section-title"><span>الجدول الدراسي والإعلانات والعلامات</span></div>
+        <div class="box-item">
+          <div class="box-item-title">📅 جدول الحصص (نموذج تنظيمي قابل للتحديث من الإدارة)</div>
+          • الاقتصاد الجزئي — محاضرة: الأحد 08:30 (مدرج ب) | TD: الثلاثاء 10:00 (قاعة 12)<br />
+          • رياضيات 1 — محاضرة: الاثنين 10:15 (مدرج أ) | TD: الأربعاء 13:30 (قاعة 08)
+        </div>
+        <div class="box-item">
+          <div class="box-item-title">📢 الإعلانات الجامعية</div>
+          • يُرجى مراجعة المقررات الرسمية للكلية واعتماد المراجع المعتمدة من الأستاذ المسؤول عن المادة.
+        </div>
+        <div class="box-item">
+          <div class="box-item-title">📊 متابعة العلامات (للقراءة فقط)</div>
+          • يتم نشر العلامات من طرف الأستاذ أو الإدارة دون إمكانية تعديلها من طرف الطالب.
+        </div>
+        <div class="box-item">
+          <div class="box-item-title">💬 التعليقات والاقتراحات والبلاغات</div>
+          <div class="form-group">
+            <label for="feedbackInput">أرسل ملاحظة أو اقتراحاً أو بلاغاً</label>
+            <textarea id="feedbackInput" rows="2" placeholder="اكتب رسالتك هنا..."></textarea>
+          </div>
+          <button type="button" class="small-btn accent" id="btnSendFeedback">إرسال</button>
+          <div id="feedbackMsg" class="alert"></div>
+        </div>
+      </div>
+
+      <div id="stTabStatus" class="card hidden">
+        <div class="section-title"><span>حالة التخزين والذكاء الاصطناعي والعمل دون إنترنت</span></div>
+        <div class="box-item">
+          <div class="box-item-title">📶 العمل دون إنترنت (Offline Mode)</div>
+          • الدروس والملخصات والاختبارات الأساسية محفوظة محلياً في المتصفح/التطبيق ويمكن قراءتها دون اتصال.
+        </div>
+        <div class="box-item">
+          <div class="box-item-title">☁️ التخزين السحابي و ECO AI والكاميرا (OCR)</div>
+          • الواجهات وبنية البيانات جاهزة، لكن الربط السحابي الحقيقي والذكاء الاصطناعي ومعالجة الصور بالكاميرا تتطلب ربط خدمة خلفية/API مجانية في مرحلة الربط السحابي لضمان الأمان وعدم وضع مفاتيح سرية داخل التطبيق.
+        </div>
+      </div>
     </section>
-  </main>
 
-  <nav class="bottom-nav">
-    <button type="button" class="nav-btn active" id="navAuth">🔐 الدخول</button>
-    <button type="button" class="nav-btn" id="navPortal">🏛️ البوابة</button>
-  </nav>
+    <section id="teacherPortal" class="hidden">
+      <div class="card">
+        <div class="portal-top">
+          <div>
+            <span class="role-pill">👨‍🏫 بوابة الأستاذ</span>
+            <h2 style="margin-top: 6px; font-size: 17px;" id="thUserName"></h2>
+            <p style="font-size: 12px; color: var(--text-secondary);" id="thUserEmail"></p>
+          </div>
+          <button type="button" class="small-btn btn-logout">تسجيل الخروج</button>
+        </div>
+      </div>
 
-  <script>
-    const I18N = {
-      ar: {
-        dir: 'rtl',
-        uniTag: 'جامعة 20 أوت 1955 سكيكدة — الجزائر',
-        heroDesc: 'منصة جامعية ذكية لطلبة السنة الأولى في ميدان العلوم الاقتصادية والتسيير والعلوم التجارية، والأساتذة والإدارة.',
-        selectPortal: 'اختر البوابة',
-        roleStudent: '🎓 الطالب',
-        roleTeacher: '👨‍🏫 الأستاذ',
-        roleAdmin: '🛡️ الإدارة',
-        tabLogin: 'تسجيل الدخول',
-        tabRegister: 'إنشاء حساب',
-        tabReset: 'استعادة كلمة المرور',
-        email: 'البريد الإلكتروني',
-        pass: 'كلمة المرور',
-        fullName: 'الاسم الكامل',
-        loginBtn: 'دخول',
-        regBtn: 'إنشاء حساب',
-        resetBtn: 'إرسال طلب الاستعادة',
-        logoutBtn: 'تسجيل الخروج',
-        navAuth: '🔐 الدخول',
-        navPortal: '🏛️ البوابة'
-      },
-      fr: {
-        dir: 'ltr',
-        uniTag: 'Université 20 Août 1955 Skikda — Algérie',
-        heroDesc: 'Plateforme universitaire intelligente pour les étudiants de 1ère année Sciences Économiques, Gestion et Commerciales, enseignants et administration.',
-        selectPortal: 'Choisir le portail',
-        roleStudent: '🎓 Étudiant',
-        roleTeacher: '👨‍🏫 Enseignant',
-        roleAdmin: '🛡️ Administration',
-        tabLogin: 'Connexion',
-        tabRegister: 'Créer un compte',
-        tabReset: 'Mot de passe oublié',
-        email: 'Adresse e-mail',
-        pass: 'Mot de passe',
-        fullName: 'Nom complet',
-        loginBtn: 'Se connecter',
-        regBtn: 'Créer le compte',
-        resetBtn: 'Envoyer la demande',
-        logoutBtn: 'Déconnexion',
-        navAuth: '🔐 Connexion',
-        navPortal: '🏛️ Portail'
-      },
-      en: {
-        dir: 'ltr',
-        uniTag: '20 August 1955 University of Skikda — Algeria',
-        heroDesc: 'Smart university platform for 1st-year Economic, Management, and Commercial Sciences students, faculty, and administration.',
-        selectPortal: 'Select Portal',
-        roleStudent: '🎓 Student',
-        roleTeacher: '👨‍🏫 Teacher',
-        roleAdmin: '🛡️ Admin',
-        tabLogin: 'Sign In',
-        tabRegister: 'Sign Up',
-        tabReset: 'Reset Password',
-        email: 'Email Address',
-        pass: 'Password',
-        fullName: 'Full Name',
-        loginBtn: 'Sign In',
-        regBtn: 'Create Account',
-        resetBtn: 'Send Reset Request',
-        logoutBtn: 'Sign Out',
-        navAuth: '🔐 Auth',
-        navPortal: '🏛️ Portal'
-      }
-    };
+      <div class="card">
+        <div class="section-title"><span>إدارة المحتوى والدردشة للمادة</span></div>
+        <div class="form-group">
+          <label for="thCourseSelect">المادة المسندة</label>
+          <select id="thCourseSelect" class="field-input"></select>
+        </div>
+        <div class="form-group">
+          <label for="thLessonTitle">عنوان درس أو تمرين TD أو إعلان جديد</label>
+          <input type="text" id="thLessonTitle" placeholder="مثال: الفصل 2 — توازن المستهلك" />
+        </div>
+        <div class="form-group">
+          <label for="thLessonBody">المحتوى أو الملاحظة</label>
+          <textarea id="thLessonBody" rows="2" placeholder="اكتب شرحاً مبسطاً أو تمريناً..."></textarea>
+        </div>
+        <button type="button" class="small-btn accent" id="btnAddTeacherItem">إضافة إلى المحتوى</button>
+        <div id="thAlert" class="alert"></div>
 
-    const MODULES_BY_ROLE = {
-      student: [
-        ['المقررات الـ 6 (اقتصاد، رياضيات، إحصاء...)', 'المرحلة 3'],
-        ['المساعد الذكي ECO AI والملخصات والكاميرا', 'المرحلة 5'],
-        ['المختبر الاقتصادي ومختبر الرسوم والإحصاء', 'المرحلة 4'],
-        ['الجدول، الإعلانات، العلامات والمنتديات', 'المرحلة 4']
-      ],
-      teacher: [
-        ['إدارة المواد والمحاضرات وTD والاختبارات', 'المرحلة 2-3'],
-        ['استقبال وتصحيح الواجبات وإدخال العلامات', 'المرحلة 2'],
-        ['إدارة المجموعات والتحكم في الدردشة', 'المرحلة 2-4'],
-        ['منتدى الأساتذة والإعلانات', 'المرحلة 4']
-      ],
-      admin: [
-        ['إدارة حسابات الطلبة والأساتذة والصلاحيات', 'المرحلة 2'],
-        ['إدارة المقررات والجداول والإعلانات', 'المرحلة 2-4'],
-        ['مراقبة البلاغات والمنتديات والسجلات', 'المرحلة 2-4'],
-        ['النسخ الاحتياطي وإعدادات النظام والذكاء الاصطناعي', 'المرحلة 5']
-      ]
-    };
+        <hr style="border: none; border-top: 1px solid var(--border-color); margin: 14px 0;" />
 
-    let selectedRole = 'student';
-    const STORAGE_KEY = 'ecosmart_phase1_users';
-    const SESSION_KEY = 'ecosmart_phase1_session';
+        <div class="section-title"><span>التحكم في دردشة الفوج / المادة</span></div>
+        <div class="form-group">
+          <label for="chatWindowInput">تحديد وقت استقبال الرسائل</label>
+          <input type="text" id="chatWindowInput" value="الأحد والثلاثاء (14:00 - 16:00)" />
+        </div>
+        <button type="button" class="small-btn" id="btnToggleChat">إغلاق / فتح الدردشة</button>
+        <p style="font-size: 12px; margin-top: 8px; color: var(--text-secondary);" id="chatStatusText">
+          حالة الدردشة: مفتوحة
+        </p>
+      </div>
+    </section>
 
-    const langSelect = document.getElementById('langSelect');
-    const themeBtn = document.getElementById('themeBtn');
-    const authAlert = document.getElementById('authAlert');
-
-    function showAlert(msg, type = 'ok') {
-      authAlert.textContent = msg;
-      authAlert.className = `alert show ${type}`;
-    }
-
-    function applyLang(lang) {
-      const d = I18N[lang] || I18N.ar;
-      document.documentElement.lang = lang;
-      document.documentElement.dir = d.dir;
-      document.getElementById('t-uni-tag').textContent = d.uniTag;
-      document.getElementById('t-hero-desc').textContent = d.heroDesc;
-      document.getElementById('t-select-portal').textContent = d.selectPortal;
-      document.getElementById('btnRoleStudent').textContent = d.roleStudent;
-      document.getElementById('btnRoleTeacher').textContent = d.roleTeacher;
-      document.getElementById('btnRoleAdmin').textContent = d.roleAdmin;
-      document.getElementById('tabLogin').textContent = d.tabLogin;
-      document.getElementById('tabRegister').textContent = d.tabRegister;
-      document.getElementById('tabReset').textContent = d.tabReset;
-      document.getElementById('lblLoginEmail').textContent = d.email;
-      document.getElementById('lblLoginPass').textContent = d.pass;
-      document.getElementById('lblRegName').textContent = d.fullName;
-      document.getElementById('lblRegEmail').textContent = d.email;
-      document.getElementById('lblRegPass').textContent = d.pass;
-      document.getElementById('lblResetEmail').textContent = d.email;
-      document.getElementById('btnSubmitLogin').textContent = d.loginBtn;
-      document.getElementById('btnSubmitRegister').textContent = d.regBtn;
-      document.getElementById('btnSubmitReset').textContent = d.resetBtn;
-      document.getElementById('btnLogout').textContent = d.logoutBtn;
-      document.getElementById('navAuth').textContent = d.navAuth;
-      document.getElementById('navPortal').textContent = d.navPortal;
-      localStorage.setItem('ecosmart_lang', lang);
-    }
-
-    function applyTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-      themeBtn.textContent = theme === 'dark' ? '☀️' : '🌙'
+    <section id="adminPortal" class="hidden">
+      <div class="card">
+        <div class="portal-top">
+          <div>
+            <span class="role-pill">🛡️ لوحة تحكم الإدارة</span>
+            <h2 style="margin-top: 6px; font-size: 17px;" id="adUserName"></h2>
+            <p style="font-size: 12px; color: var(--text-secondary);" id="
