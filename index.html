@@ -38,11 +38,7 @@
       --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Arabic", sans-serif;
@@ -68,11 +64,7 @@
       border-bottom: 2px solid var(--gold-soft);
     }
 
-    .brand-mini {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .brand-mini { display: flex; align-items: center; gap: 10px; }
 
     .brand-badge {
       width: 38px;
@@ -87,31 +79,13 @@
       font-size: 14px;
     }
 
-    .brand-mini-title {
-      font-size: 16px;
-      font-weight: 800;
-    }
+    .brand-mini-title { font-size: 16px; font-weight: 800; }
+    .brand-mini-sub { font-size: 11px; color: #e6d39a; }
+    .controls { display: flex; align-items: center; gap: 8px; }
+    select, button, textarea { font-family: inherit; }
+    button { cursor: pointer; }
 
-    .brand-mini-sub {
-      font-size: 11px;
-      color: #e6d39a;
-    }
-
-    .controls {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    select, button, textarea {
-      font-family: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    .lang-select {
+    .lang-select, .icon-btn {
       background: rgba(255, 255, 255, 0.14);
       color: #ffffff;
       border: 1px solid rgba(255, 255, 255, 0.28);
@@ -121,26 +95,8 @@
       font-weight: 600;
     }
 
-    .lang-select option {
-      color: #10241b;
-      background: #ffffff;
-    }
-
-    .icon-btn {
-      background: rgba(255, 255, 255, 0.14);
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      border-radius: 8px;
-      padding: 6px 10px;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 16px;
-    }
+    .lang-select option { color: #10241b; background: #ffffff; }
+    .container { max-width: 720px; margin: 0 auto; padding: 16px; }
 
     .hero-card {
       background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
@@ -164,23 +120,9 @@
       margin-bottom: 8px;
     }
 
-    .hero-title {
-      font-size: 24px;
-      font-weight: 900;
-    }
-
-    .hero-slogan {
-      color: #f2d98d;
-      font-size: 12px;
-      font-weight: 600;
-      margin: 4px 0 8px;
-    }
-
-    .hero-uni {
-      font-size: 12px;
-      opacity: 0.92;
-      line-height: 1.5;
-    }
+    .hero-title { font-size: 24px; font-weight: 900; }
+    .hero-slogan { color: #f2d98d; font-size: 12px; font-weight: 600; margin: 4px 0 8px; }
+    .hero-uni { font-size: 12px; opacity: 0.92; line-height: 1.5; }
 
     .card {
       background: var(--bg-card);
@@ -202,16 +144,8 @@
       gap: 8px;
     }
 
-    [data-theme="dark"] .section-title {
-      color: var(--gold-soft);
-    }
-
-    .role-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-bottom: 14px;
-    }
+    [data-theme="dark"] .section-title { color: var(--gold-soft); }
+    .role-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
 
     .role-btn {
       background: var(--bg-subtle);
@@ -223,18 +157,8 @@
       font-weight: 700;
     }
 
-    .role-btn.active {
-      background: var(--green-dark);
-      color: #ffffff;
-      border-color: var(--gold-soft);
-    }
-
-    .auth-tabs, .sub-tabs {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
+    .role-btn.active { background: var(--green-dark); color: #ffffff; border-color: var(--gold-soft); }
+    .auth-tabs, .sub-tabs { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
 
     .tab-btn, .sub-tab {
       background: var(--bg-subtle);
@@ -253,19 +177,10 @@
     }
 
     [data-theme="dark"] .tab-btn.active,
-    [data-theme="dark"] .sub-tab.active {
-      color: var(--gold-soft);
-    }
+    [data-theme="dark"] .sub-tab.active { color: var(--gold-soft); }
 
-    .form-group {
-      margin-bottom: 10px;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
+    .form-group { margin-bottom: 10px; }
+    .two-col { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 
     label {
       display: block;
@@ -307,11 +222,7 @@
       font-weight: 700;
     }
 
-    .small-btn.accent {
-      background: var(--green-dark);
-      color: #ffffff;
-      border-color: var(--gold-soft);
-    }
+    .small-btn.accent { background: var(--green-dark); color: #ffffff; border-color: var(--gold-soft); }
 
     .alert {
       padding: 10px 12px;
@@ -323,29 +234,11 @@
       line-height: 1.5;
     }
 
-    .alert.show {
-      display: block;
-    }
+    .alert.show { display: block; }
+    .alert.ok { background: rgba(6, 118, 71, 0.14); color: var(--success); border: 1px solid rgba(6, 118, 71, 0.35); }
+    .alert.err { background: rgba(180, 35, 24, 0.14); color: var(--danger); border: 1px solid rgba(180, 35, 24, 0.35); }
 
-    .alert.ok {
-      background: rgba(6, 118, 71, 0.14);
-      color: var(--success);
-      border: 1px solid rgba(6, 118, 71, 0.35);
-    }
-
-    .alert.err {
-      background: rgba(180, 35, 24, 0.14);
-      color: var(--danger);
-      border: 1px solid rgba(180, 35, 24, 0.35);
-    }
-
-    .portal-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    .portal-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap; }
 
     .role-pill {
       background: var(--gold-light);
@@ -357,15 +250,8 @@
       font-weight: 800;
     }
 
-    [data-theme="dark"] .role-pill {
-      color: var(--gold-soft);
-    }
-
-    .subjects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
+    [data-theme="dark"] .role-pill { color: var(--gold-soft); }
+    .subjects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 
     .subject-card {
       background: var(--bg-subtle);
@@ -382,20 +268,9 @@
       color: var(--green-dark);
     }
 
-    [data-theme="dark"] .subject-card.selected {
-      color: var(--gold-soft);
-    }
-
-    .subject-title {
-      font-size: 13px;
-      font-weight: 800;
-      margin-bottom: 4px;
-    }
-
-    .subject-meta {
-      font-size: 11px;
-      color: var(--text-secondary);
-    }
+    [data-theme="dark"] .subject-card.selected { color: var(--gold-soft); }
+    .subject-title { font-size: 13px; font-weight: 800; margin-bottom: 4px; }
+    .subject-meta { font-size: 11px; color: var(--text-secondary); }
 
     .box-item {
       background: var(--bg-subtle);
@@ -407,11 +282,7 @@
       line-height: 1.6;
     }
 
-    .box-item-title {
-      font-weight: 800;
-      font-size: 13px;
-      margin-bottom: 4px;
-    }
+    .box-item-title { font-weight: 800; font-size: 13px; margin-bottom: 4px; }
 
     .quiz-option {
       display: block;
@@ -427,15 +298,8 @@
       font-weight: 600;
     }
 
-    .quiz-option.correct {
-      border-color: var(--success);
-      background: rgba(6, 118, 71, 0.14);
-    }
-
-    .quiz-option.wrong {
-      border-color: var(--danger);
-      background: rgba(180, 35, 24, 0.14);
-    }
+    .quiz-option.correct { border-color: var(--success); background: rgba(6, 118, 71, 0.14); }
+    .quiz-option.wrong { border-color: var(--danger); background: rgba(180, 35, 24, 0.14); }
 
     .chart-bars {
       display: flex;
@@ -449,28 +313,9 @@
       margin-top: 10px;
     }
 
-    .bar-col {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100%;
-      justify-content: flex-end;
-      gap: 4px;
-    }
-
-    .bar-fill {
-      width: 100%;
-      min-height: 6px;
-      border-radius: 6px 6px 0 0;
-      background: linear-gradient(180deg, var(--gold-soft), var(--green-dark));
-    }
-
-    .bar-lbl {
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--text-secondary);
-    }
+    .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; gap: 4px; }
+    .bar-fill { width: 100%; min-height: 6px; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, var(--gold-soft), var(--green-dark)); }
+    .bar-lbl { font-size: 10px; font-weight: 700; color: var(--text-secondary); }
 
     .bottom-nav {
       position: fixed;
@@ -485,28 +330,10 @@
       z-index: 30;
     }
 
-    .nav-btn {
-      background: transparent;
-      border: none;
-      color: var(--text-secondary);
-      font-size: 12px;
-      font-weight: 700;
-      padding: 6px 10px;
-      border-radius: 10px;
-    }
-
-    .nav-btn.active {
-      background: var(--gold-light);
-      color: var(--green-dark);
-    }
-
-    [data-theme="dark"] .nav-btn.active {
-      color: var(--gold-soft);
-    }
-
-    .hidden {
-      display: none !important;
-    }
+    .nav-btn { background: transparent; border: none; color: var(--text-secondary); font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 10px; }
+    .nav-btn.active { background: var(--gold-light); color: var(--green-dark); }
+    [data-theme="dark"] .nav-btn.active { color: var(--gold-soft); }
+    .hidden { display: none !important; }
   </style>
 </head>
 <body>
@@ -539,16 +366,12 @@
     </section>
 
     <section id="authCard" class="card">
-      <div class="section-title">
-        <span id="t-select-portal">اختر البوابة</span>
-      </div>
-
+      <div class="section-title"><span id="t-select-portal">اختر البوابة</span></div>
       <div class="role-grid">
         <button type="button" class="role-btn active" data-role="student" id="btnRoleStudent">🎓 الطالب</button>
         <button type="button" class="role-btn" data-role="teacher" id="btnRoleTeacher">👨‍🏫 الأستاذ</button>
         <button type="button" class="role-btn" data-role="admin" id="btnRoleAdmin">🛡️ الإدارة</button>
       </div>
-
       <div class="auth-tabs">
         <button type="button" class="tab-btn active" data-tab="login" id="tabLogin">تسجيل الدخول</button>
         <button type="button" class="tab-btn" data-tab="register" id="tabRegister">إنشاء حساب</button>
@@ -604,7 +427,6 @@
           </div>
           <button type="button" class="small-btn btn-logout">تسجيل الخروج</button>
         </div>
-
         <div class="sub-tabs" style="margin-top: 12px;">
           <button type="button" class="sub-tab active" data-st-tab="courses">📚 المقررات (6)</button>
           <button type="button" class="sub-tab" data-st-tab="ecoLab">⚖️ المختبر الاقتصادي</button>
@@ -614,13 +436,9 @@
       </div>
 
       <div id="stTabCourses" class="card">
-        <div class="section-title">
-          <span>مقررات السنة الأولى (علوم اقتصادية وتجارية)</span>
-        </div>
+        <div class="section-title"><span>مقررات السنة الأولى (علوم اقتصادية وتجارية)</span></div>
         <div class="subjects-grid" id="subjectsGrid"></div>
-
         <hr style="border: none; border-top: 1px solid var(--border-color); margin: 14px 0;" />
-
         <div id="subjectDetailBox"></div>
       </div>
 
@@ -630,22 +448,10 @@
           النموذج: الطلب Qd = a - b·P والعرض Qs = c + d·P. أدخل المعاملات لحساب التوازن.
         </p>
         <div class="two-col">
-          <div class="form-group">
-            <label for="eqA">الحد الثابت للطلب (a)</label>
-            <input type="number" id="eqA" value="100" step="any" />
-          </div>
-          <div class="form-group">
-            <label for="eqB">ميل السعر في الطلب (b)</label>
-            <input type="number" id="eqB" value="2" step="any" />
-          </div>
-          <div class="form-group">
-            <label for="eqC">الحد الثابت للعرض (c)</label>
-            <input type="number" id="eqC" value="20" step="any" />
-          </div>
-          <div class="form-group">
-            <label for="eqD">ميل السعر في العرض (d)</label>
-            <input type="number" id="eqD" value="2" step="any" />
-          </div>
+          <div class="form-group"><label for="eqA">الحد الثابت للطلب (a)</label><input type="number" id="eqA" value="100" step="any" /></div>
+          <div class="form-group"><label for="eqB">ميل السعر في الطلب (b)</label><input type="number" id="eqB" value="2" step="any" /></div>
+          <div class="form-group"><label for="eqC">الحد الثابت للعرض (c)</label><input type="number" id="eqC" value="20" step="any" /></div>
+          <div class="form-group"><label for="eqD">ميل السعر في العرض (d)</label><input type="number" id="eqD" value="2" step="any" /></div>
         </div>
         <button type="button" class="small-btn accent" id="btnCalcEq">حساب التوازن</button>
         <div id="eqResultBox" class="box-item" style="margin-top: 10px;"></div>
@@ -692,4 +498,26 @@
             <span class="role-pill">👨‍🏫 بوابة الأستاذ</span>
             <h2 style="margin-top: 6px; font-size: 17px;" id="thUserName"></h2>
             <p style="font-size: 12px; color: var(--text-secondary);" id="thUserEmail"></p>
-     
+          </div>
+          <button type="button" class="small-btn btn-logout">تسجيل الخروج</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="section-title"><span>إدارة المحتوى والدردشة للمادة</span></div>
+        <div class="form-group">
+          <label for="thCourseSelect">المادة المسندة</label>
+          <select id="thCourseSelect" class="field-input"></select>
+        </div>
+        <div class="form-group">
+          <label for="thLessonTitle">عنوان درس أو تمرين TD أو إعلان جديد</label>
+          <input type="text" id="thLessonTitle" placeholder="مثال: الفصل 2 — توازن المستهلك" />
+        </div>
+        <div class="form-group">
+          <label for="thLessonBody">المحتوى أو الملاحظة</label>
+          <textarea id="thLessonBody" rows="2" placeholder="اكتب شرحاً مبسطاً أو تمريناً..."></textarea>
+        </div>
+        <button type="button" class="small-btn accent" id="btnAddTeacherItem">إضافة إلى المحتوى</button>
+        <div id="thAlert" class="alert"></div>
+        <hr style="border: none; border-top: 1px solid var(--border-color); margin: 14px 0;" />
+        <div class="section-title"><span>التحكم في دردشة الفوج / المادة</span></div>
+        <div class="form-gro
