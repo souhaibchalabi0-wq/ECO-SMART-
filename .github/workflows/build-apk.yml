@@ -13,29 +13,35 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node.js 22
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
-      - name: Install dependencies and Capacitor
-        run: |
-          npm init -y
-          npm install @capacitor/core @capacitor/cli @capacitor/android
-          npx cap init "ECO SMART" "com.ecosmart.skikda" --web-dir=www
-          npx cap add android
+      - name: Setup Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
 
-      - name: Copy web app to www
+      - name: Prepare web directory
         run: |
           mkdir -p www
-          cp index.html www/ 2>/dev/null || true
+          cp index.html www/
 
-      - name: Sync Capacitor Android
-        run: npx cap sync android
+      - name: Initialize Capacitor and Android
+        run: |
+          npm init -y
+          npm install @capacitor/core@6 @capacitor/cli@6 @capacitor/android@6
+          npx cap init "ECO SMART" "com.ecosmart.skikda" --web-dir=www
+          npx cap add android
+          npx cap sync android
 
       - name: Build Debug APK
         working-directory: android
-        run: chmod +x gradlew && ./gradlew assembleDebug
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
