@@ -261,6 +261,12 @@
       margin-bottom: 10px;
     }
 
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
     label {
       display: block;
       font-size: 12px;
@@ -431,6 +437,41 @@
       background: rgba(180, 35, 24, 0.14);
     }
 
+    .chart-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      height: 130px;
+      padding: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-top: 10px;
+    }
+
+    .bar-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-end;
+      gap: 4px;
+    }
+
+    .bar-fill {
+      width: 100%;
+      min-height: 6px;
+      border-radius: 6px 6px 0 0;
+      background: linear-gradient(180deg, var(--gold-soft), var(--green-dark));
+    }
+
+    .bar-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -566,8 +607,9 @@
 
         <div class="sub-tabs" style="margin-top: 12px;">
           <button type="button" class="sub-tab active" data-st-tab="courses">📚 المقررات (6)</button>
-          <button type="button" class="sub-tab" data-st-tab="services">🗂️ الجدول والنتائج والخدمات</button>
-          <button type="button" class="sub-tab" data-st-tab="status">🔌 الحالة والربط</button>
+          <button type="button" class="sub-tab" data-st-tab="ecoLab">⚖️ المختبر الاقتصادي</button>
+          <button type="button" class="sub-tab" data-st-tab="statLab">📈 الإحصاء والرسوم</button>
+          <button type="button" class="sub-tab" data-st-tab="services">🗂️ الخدمات والحالة</button>
         </div>
       </div>
 
@@ -582,20 +624,54 @@
         <div id="subjectDetailBox"></div>
       </div>
 
+      <div id="stTabEcoLab" class="card hidden">
+        <div class="section-title"><span>مختبر توازن السوق (العرض والطلب)</span></div>
+        <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 10px;">
+          النموذج: الطلب Qd = a - b·P والعرض Qs = c + d·P. أدخل المعاملات لحساب التوازن.
+        </p>
+        <div class="two-col">
+          <div class="form-group">
+            <label for="eqA">الحد الثابت للطلب (a)</label>
+            <input type="number" id="eqA" value="100" step="any" />
+          </div>
+          <div class="form-group">
+            <label for="eqB">ميل السعر في الطلب (b)</label>
+            <input type="number" id="eqB" value="2" step="any" />
+          </div>
+          <div class="form-group">
+            <label for="eqC">الحد الثابت للعرض (c)</label>
+            <input type="number" id="eqC" value="20" step="any" />
+          </div>
+          <div class="form-group">
+            <label for="eqD">ميل السعر في العرض (d)</label>
+            <input type="number" id="eqD" value="2" step="any" />
+          </div>
+        </div>
+        <button type="button" class="small-btn accent" id="btnCalcEq">حساب التوازن</button>
+        <div id="eqResultBox" class="box-item" style="margin-top: 10px;"></div>
+      </div>
+
+      <div id="stTabStatLab" class="card hidden">
+        <div class="section-title"><span>مختبر الإحصاء الوصفي والرسوم البيانية</span></div>
+        <div class="form-group">
+          <label for="statSeriesInput">أدخل سلسلة أرقام مفصولة بفاصلة أو مسافة</label>
+          <input type="text" id="statSeriesInput" value="12, 15, 18, 14, 21, 16" />
+        </div>
+        <button type="button" class="small-btn accent" id="btnCalcStat">تحليل السلسلة ورسم الأعمدة</button>
+        <div id="statSummaryBox" class="box-item" style="margin-top: 10px;"></div>
+        <div id="statChartBox" class="chart-bars"></div>
+      </div>
+
       <div id="stTabServices" class="card hidden">
-        <div class="section-title"><span>الجدول الدراسي والإعلانات والعلامات</span></div>
+        <div class="section-title"><span>الجدول الدراسي والنتائج وحالة الربط</span></div>
         <div class="box-item">
           <div class="box-item-title">📅 جدول الحصص (نموذج تنظيمي قابل للتحديث من الإدارة)</div>
           • الاقتصاد الجزئي — محاضرة: الأحد 08:30 (مدرج ب) | TD: الثلاثاء 10:00 (قاعة 12)<br />
           • رياضيات 1 — محاضرة: الاثنين 10:15 (مدرج أ) | TD: الأربعاء 13:30 (قاعة 08)
         </div>
         <div class="box-item">
-          <div class="box-item-title">📢 الإعلانات الجامعية</div>
-          • يُرجى مراجعة المقررات الرسمية للكلية واعتماد المراجع المعتمدة من الأستاذ المسؤول عن المادة.
-        </div>
-        <div class="box-item">
-          <div class="box-item-title">📊 متابعة العلامات (للقراءة فقط)</div>
-          • يتم نشر العلامات من طرف الأستاذ أو الإدارة دون إمكانية تعديلها من طرف الطالب.
+          <div class="box-item-title">📶 العمل دون إنترنت و ☁️ الربط السحابي</div>
+          • المحتوى والمختبرات محفوظة محلياً وتعمل دون اتصال بالإنترنت. الربط السحابي الكامل والذكاء الاصطناعي وتعرّف النصوص بالكاميرا (OCR) جاهزة بهياكلها وتتطلب ربط خدمة خلفية/API مجانية دون وضع أي مفاتيح سرية داخل التطبيق.
         </div>
         <div class="box-item">
           <div class="box-item-title">💬 التعليقات والاقتراحات والبلاغات</div>
@@ -607,18 +683,6 @@
           <div id="feedbackMsg" class="alert"></div>
         </div>
       </div>
-
-      <div id="stTabStatus" class="card hidden">
-        <div class="section-title"><span>حالة التخزين والذكاء الاصطناعي والعمل دون إنترنت</span></div>
-        <div class="box-item">
-          <div class="box-item-title">📶 العمل دون إنترنت (Offline Mode)</div>
-          • الدروس والملخصات والاختبارات الأساسية محفوظة محلياً في المتصفح/التطبيق ويمكن قراءتها دون اتصال.
-        </div>
-        <div class="box-item">
-          <div class="box-item-title">☁️ التخزين السحابي و ECO AI والكاميرا (OCR)</div>
-          • الواجهات وبنية البيانات جاهزة، لكن الربط السحابي الحقيقي والذكاء الاصطناعي ومعالجة الصور بالكاميرا تتطلب ربط خدمة خلفية/API مجانية في مرحلة الربط السحابي لضمان الأمان وعدم وضع مفاتيح سرية داخل التطبيق.
-        </div>
-      </div>
     </section>
 
     <section id="teacherPortal" class="hidden">
@@ -628,46 +692,4 @@
             <span class="role-pill">👨‍🏫 بوابة الأستاذ</span>
             <h2 style="margin-top: 6px; font-size: 17px;" id="thUserName"></h2>
             <p style="font-size: 12px; color: var(--text-secondary);" id="thUserEmail"></p>
-          </div>
-          <button type="button" class="small-btn btn-logout">تسجيل الخروج</button>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="section-title"><span>إدارة المحتوى والدردشة للمادة</span></div>
-        <div class="form-group">
-          <label for="thCourseSelect">المادة المسندة</label>
-          <select id="thCourseSelect" class="field-input"></select>
-        </div>
-        <div class="form-group">
-          <label for="thLessonTitle">عنوان درس أو تمرين TD أو إعلان جديد</label>
-          <input type="text" id="thLessonTitle" placeholder="مثال: الفصل 2 — توازن المستهلك" />
-        </div>
-        <div class="form-group">
-          <label for="thLessonBody">المحتوى أو الملاحظة</label>
-          <textarea id="thLessonBody" rows="2" placeholder="اكتب شرحاً مبسطاً أو تمريناً..."></textarea>
-        </div>
-        <button type="button" class="small-btn accent" id="btnAddTeacherItem">إضافة إلى المحتوى</button>
-        <div id="thAlert" class="alert"></div>
-
-        <hr style="border: none; border-top: 1px solid var(--border-color); margin: 14px 0;" />
-
-        <div class="section-title"><span>التحكم في دردشة الفوج / المادة</span></div>
-        <div class="form-group">
-          <label for="chatWindowInput">تحديد وقت استقبال الرسائل</label>
-          <input type="text" id="chatWindowInput" value="الأحد والثلاثاء (14:00 - 16:00)" />
-        </div>
-        <button type="button" class="small-btn" id="btnToggleChat">إغلاق / فتح الدردشة</button>
-        <p style="font-size: 12px; margin-top: 8px; color: var(--text-secondary);" id="chatStatusText">
-          حالة الدردشة: مفتوحة
-        </p>
-      </div>
-    </section>
-
-    <section id="adminPortal" class="hidden">
-      <div class="card">
-        <div class="portal-top">
-          <div>
-            <span class="role-pill">🛡️ لوحة تحكم الإدارة</span>
-            <h2 style="margin-top: 6px; font-size: 17px;" id="adUserName"></h2>
-            <p style="font-size: 12px; color: var(--text-secondary);" id="
+     
